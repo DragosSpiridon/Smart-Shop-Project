@@ -1,0 +1,19 @@
+<h1 class="page-header">Order History</h1>
+
+<% if(items.length > 0) { %>
+    <table>
+        <tr>
+        <th>Item name</th><th>Quantity</th><th>Date</th>
+        </tr>
+
+        <% items.forEach(item => { %>
+            <tr>
+                <td><%= item.itemId %></td>
+                <td><%= item.quantity %></td>
+                <td><%= item.date.toISOString().split('T')[0] %></td>
+            </tr>
+        <% }) %>
+    </table>
+<% } else { %>
+    <labe>You have not ordered any items yet!</labe>
+<% } %>

@@ -1,0 +1,8 @@
+table, th, td {
+    border: 1px solid;
+    width: 70%;
+}
+
+td:hover {
+    background-color: hsl(var(--color-base-hue), 100%, 50%);
+}

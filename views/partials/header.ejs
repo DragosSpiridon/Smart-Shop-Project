@@ -1,0 +1,26 @@
+<header>
+    <nav class="header-nav">
+        <a class="header-title" href="/">Smart Shop</a>
+        <ul>
+            <li><a href="/items">Items page</a></li>
+            <li><a href="/clients">Client page</a></li>
+            <li><a href="/orders/new">Order item</a></li>
+        </ul>
+        <div class="dropdown">
+            <button class="dropbtn"></button>
+            <div class="dropdown-content">
+                <% if(isAuthenticated) { %>
+                    <label style="color: slateblue">Hello, <%= name %>!</label>
+                    <a href="/clients">Profile</a>
+                    <a href="/items">Items page</a>
+                    <a href="/clients/orderHistory">Order history</a>
+                <% } else { %>
+                    <label style="color: crimson">Not logged in</label>
+                    <a href="/clients/login">Log in</a>
+                    <a href="/clients/register">Register</a>
+                <% } %>
+            </div>
+        </div>
+    </nav>
+    
+</header>

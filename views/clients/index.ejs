@@ -1,0 +1,24 @@
+<h1 class="page-header"><%= user.name %>'s profile</h1>
+<div>
+    <label>Name: <%= user.name %></label>
+</div>
+<div>
+    <label>Email: <%= user.email %></label>
+</div>
+<div>
+    <label>Balance: <%= user.balance.toFixed(2) %></label>
+</div>
+<br>
+<div class="btn-row">
+    <a class="btn btn-primary" href="clients/orderHistory">Order history</a>
+    <a class="btn btn-primary" href="/clients/<%= user.id %>/edit">Edit profile</a>
+</div>
+<br>
+<div class="btn-row">
+    <form action="/clients/<%= user.id %>?_method=DELETE" method="POST">
+        <button class="btn btn-danger" type="submit" onclick="return confirm('Are you sure?')">Delete account</button>
+    </form>
+    <form action="/clients/logout?_method=DELETE" method="POST">
+        <button class="btn btn-danger" type="submit">Log out</button>
+    </form>
+</div>

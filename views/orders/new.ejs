@@ -1,0 +1,30 @@
+<h1 class="page-header">Make a new order!</h1>
+<form action="/orders" method="POST">
+
+    <div class="form-item">
+        <label>Client</label>
+        <select name="client">
+        <% users.forEach(user => { %>
+            <option label="<%= user.name %>" value="<%= user.id %>"></option>
+        <% }) %>
+        </select>
+    </div>
+
+    <div class="form-item">
+        <label>Item</label>
+        <select id="itemChoice" name="item">
+            <% items.forEach(item => { %>
+                <option label="<%= item.name %>" value="<%= item.id %>"></option>
+            <% }) %>
+        </select>
+    </div>
+
+    <div class="form-item">
+        <label>Quantity</label>
+        <input type="number" min="1" name="quantity">
+    </div>
+
+    <br>
+    <button class="btn btn-primary" type="submit">Make order</button>
+
+</form>

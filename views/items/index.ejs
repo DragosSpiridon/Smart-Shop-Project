@@ -1,0 +1,17 @@
+<h1 class="page-header">Here is a list of the items available in the shop:</h1>
+
+<table>
+    <tr>
+       <th>Item name</th><th>Price</th><th>Quantity</th>
+    </tr>
+
+    <% items.forEach(item => { %>
+        <tr>
+            <td><%= item.name %></td>
+            <td><%= item.price %></td>
+            <td><%= item.quantity %></td>
+        </tr>
+    <% }) %>
+</table>
+<br>
+<a class="btn btn-primary" href="/items/new">Add items</a>
